@@ -33,3 +33,4 @@ And finally restart your ERPNext. Alternatively, you can reboot your server. Thi
   <code>
 bench restart
 </code></p>
+<p>Enjoy!</p>
