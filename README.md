@@ -33,4 +33,6 @@ And finally restart your ERPNext. Alternatively, you can reboot your server. Thi
   <code>
 bench restart
 </code></p>
+<p>I added the Google Picker integration js into the FileUploader.vue file; I know I should have done the integration as a Vue component but I chose the path that was easier for me.</p>
+<p>The integration works without deploying the handler.py file but then the name of the file you pick from the drive is not saved in ERPNext. It was disturbing for me to see every file I attached showing up with the name "view".</p> 
 <p>Enjoy!</p>
