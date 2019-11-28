@@ -2,7 +2,7 @@
 
 This project provides Google File Picker integration for ERPNext v12.1.
 
-<img src="https://raw.githubusercontent.com/osmansen/ERPNext-12-GoogleFilePicker/master/googleFilePicker.png">
+<img src="https://github.com/osmansen/ERPNext-12-GoogleFilePicker/blob/master/googleFilePicker.png">
 
 To get the integration on your ERPNext installation, you will need to download the two files in this project and edit the following lines in FileUploader.vue with your own settings:
 
