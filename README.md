@@ -20,12 +20,9 @@ Once you complete editing the settings above, copy the two files into their fold
   </code></p>
 <p>
 Then build your installation with the following command. This is necessary to build the js packs with the changes in FileUploader.vue:
-</p><p>
-<code>
-bench build<br/>
-bench clear-cache
-</code>
- </p>
+</p>
+<p><code>bench build</code><p>
+<p><code>bench clear-cache</p></code>
  <p>
 And finally restart your ERPNext. Alternatively, you can reboot your server. This is necessary to reflect the changes in handler.py:
 </p>
