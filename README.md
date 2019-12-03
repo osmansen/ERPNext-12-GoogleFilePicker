@@ -22,7 +22,7 @@ Once you complete editing the settings above, copy the two files into their fold
 Then build your installation with the following command. This is necessary to build the js packs with the changes in FileUploader.vue:
 </p><p>
 <code>
-bench build
+bench build<br/>
 bench clear-cache
 </code>
  </p>
