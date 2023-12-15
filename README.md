@@ -1,3 +1,46 @@
+# ERPNext-15 GoogleFilePicker with Shared Folders
+
+In ERPNext v15, I changed the following file to enable showing Shared Drives on the Google Picker Dialog:
+
+	bench/apps/frappe/frappe/public/js/integrations/google_drive_picker.js
+
+I added the "shared drives" and "shared with me" views to the dialog builder as follows:
+
+        createPicker(access_token) {
+                const sharedDrivesView = new google.picker.DocsView(google.picker.ViewId.DOCS)
+                        .setMode(window.google.picker.DocsViewMode.LIST)
+                        .setEnableDrives(true)
+                        .setIncludeFolders(true); // creates just the shared drives view
+
+                const sharedWithMeView = new google.picker.DocsView(google.picker.ViewId.DOCS)
+                        .setOwnedByMe(false); // creates just the shared with me view
+
+                this.view = new google.picker.View(google.picker.ViewId.DOCS);
+                this.picker = new google.picker.PickerBuilder()
+                        .setDeveloperKey(this.developerKey)
+                        .setAppId(this.appId)
+                        .setOAuthToken(access_token)
+                        .addView(this.view)
+                        .addView(sharedDrivesView)
+                        .addView(sharedWithMeView)
+                        .addView(new google.picker.DocsUploadView())
+                        .setLocale(frappe.boot.lang)
+                        .setCallback(this.pickerCallback)
+                        .build();
+                this.picker.setVisible(true);
+                this.setupHide();
+        }
+
+
+Then I ran the following commands to make the changes effective:
+
+	bench build
+	bench clear-cache
+
+I adapted the solution from the below page:
+
+	https://stackoverflow.com/questions/75268380/how-to-show-a-list-of-shared-with-me-files-in-google-picker
+
 # ERPNext-12-GoogleFilePicker
 
 This project provides Google File Picker integration for ERPNext v12.1.
